@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priya's Mehndi Art | Ludhiana</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>👑 Priya's Mehndi</h2>
+            </div>
+            <ul class="nav-menu" id="mobileMenu">
+                <li><a href="index.html" class="nav-link active">🏠 Home</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#booking" class="nav-link">Book Now</a></li>
+                <li><a href="https://wa.me/918699358629" class="nav-link whatsapp" target="_blank">WhatsApp</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Priya's Mehndi Art</h1>
+                <p>Ludhiana's Premier Bridal Mehndi Artist<br>5+ Years Experience | 1000+ Happy Brides</p>
+                <a href="https://wa.me/918699358629?text=Hi%20Priya!%20Bridal%20Mehndi%20booking"
+                    class="btn btn-primary btn-whatsapp" target="_blank">
+                    <i class="ri-whatsapp-line"></i> Book Now WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">💰 Group/Event Pricing</h2>
+            <div class="pricing-grid">
+                <!-- Popular Card -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3>10-12 People</h3>
+                    <div class="price">₹350<span>/person</span></div>
+                    <div class="total-price">Total: ₹3500-4200</div>
+                    <a href="https://wa.me/918699358629?text=Hi!%2010-12%20people%20booking" class="btn">Book Now</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>5-9 People</h3>
+                    <div class="price">₹400<span>/person</span></div>
+                    <div class="total-price">Total: ₹2000-3600</div>
+                    <a href="https://wa.me/918699358629?text=Hi!%205-9%20people%20booking" class="btn">Book Now</a>
+                </div>
+
+                <div class="pricing-card special-card">
+                    <h3>13+ People</h3>
+                    <div class="price enquiry-price">SPECIAL OFFER</div>
+                    <div class="total-price custom-quote">💳 COD 100% | No Advance<br>
+                        ⭐ 1000+ Happy Brides Guarantee</div>
+                    <a href="https://wa.me/918699358629?text=Hi!%2013+%20people%20enquiry" class="btn">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY GALLERY - FIXED VERSION -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">🍃 Choose Your Style</h2>
+
+            <!-- Category Cards -->
+            <div class="category-grid">
+                <div class="category-card active" data-category="bridal">
+                    <div class="category-content">
+                        <h3>👰 Bridal</h3>
+                        <p>Heavy traditional designs</p>
+                        <span class="image-count">+4 images</span>
+                    </div>
+                </div>
+                <div class="category-card" data-category="arabic">
+                    <div class="category-content">
+                        <h3>Arabic</h3>
+                        <p>Bold modern patterns</p>
+                        <span class="image-count">+3 images</span>
+                    </div>
+                </div>
+                <div class="category-card" data-category="kids">
+                    <div class="category-content">
+                        <h3>👧 Kids</h3>
+                        <p>Simple & cute designs</p>
+                        <span class="image-count">+5 images</span>
+                    </div>
+                </div>
+                <div class="category-card" data-category="party">
+                    <div class="category-content">
+                        <h3>🎉 Party</h3>
+                        <p>Festival special</p>
+                        <span class="image-count">+4 images</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Images Grids -->
+            <div class="images-grid-container">
+                <div class="images-grid active" id="bridal-grid">
+                    <!-- Bridal images यहाँ आएँगे -->
+                </div>
+                <div class="images-grid" id="arabic-grid">
+                    <!-- Arabic images -->
+                </div>
+                <div class="images-grid" id="kids-grid">
+                    <!-- Kids images -->
+                </div>
+                <div class="images-grid" id="party-grid">
+                    <!-- Party images -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="booking" id="booking">
+        <div class="container">
+            <h2 class="section-title">Book Your Mehndi Appointment</h2>
+            <form id="bookingForm" class="booking-form">
+                <div class="form-row">
+                    <input type="text" id="name" placeholder="Full Name *" required>
+                    <input type="tel" id="phone" placeholder="Phone Number *" required>
+                </div>
+                <div class="form-row">
+                    <input type="date" id="date" required>
+                    <input type="time" id="time" required>
+                </div>
+                <div class="form-row">
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="bridal">Bridal</option>
+                        <option value="arabic">Arabic</option>
+                        <option value="kids">Kids</option>
+                        <option value="party">Party</option>
+                        <option value="group">Group/Event</option>
+                    </select>
+                    <select id="type" required>
+                        <option value="">Type</option>
+                        <option value="full">Full Hands</option>
+                        <option value="half">Half Hands</option>
+                    </select>
+                </div>
+                <div class="form-row group-fields" style="display:none;">
+                    <select id="groupSize">
+                        <option value="">Group Size</option>
+                        <option value="1-4">1-4 People</option>
+                        <option value="5-9">5-9 People</option>
+                        <option value="10-12">10-12 People</option>
+                        <option value="13+">13+ People (Enquiry)</option>
+                    </select>
+                    <select id="occasion">
+                        <option value="">Occasion</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="party">Party/Event</option>
+                    </select>
+                </div>
+                <div class="total-display">
+                    <h3>Total Amount: <span id="totalAmount">₹0</span></h3>
+                </div>
+                <div class="form-row payment-row">
+                    <label>
+                        <input type="radio" name="payment" value="online" checked> Online (Razorpay/Google Pay)
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="cod"> Cash on Delivery
+                    </label>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">Confirm & Pay</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Ready for Your Perfect Mehndi? ✨</h2>
+            <p>📍 Serving Ludhiana & nearby areas | Natural henna | Guaranteed dark stain</p>
+            <a href="https://wa.me/918699358629?text=Hi%20Priya!%20Mehndi%20booking%20details"
+                class="btn btn-primary btn-whatsapp">
+                <i class="ri-whatsapp-line"></i> Book Appointment
+            </a>
+        </div>
+    </section>
+    <script>
+        // PERFECT WORKING NAVBAR SCRIPT
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            // Mobile menu toggle
+            if (hamburger) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+
+            // Smooth scroll - FIXED VERSION
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Close mobile menu first
+                    if (hamburger) hamburger.classList.remove('active');
+                    if (mobileMenu) mobileMenu.classList.remove('active');
+
+                    const href = link.getAttribute('href');
+
+                    // Home link (index.html)
+                    if (href === 'index.html') {
+                        window.location.href = 'index.html';
+                        return;
+                    }
+
+                    // Section scroll
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1); // #booking → booking
+
+                        console.log('Scrolling to:', targetId); // Debug
+
+                        const targetSection = document.getElementById(targetId);
+
+                        if (targetSection) {
+                            const navbarHeight = 80;
+                            const offsetTop = targetSection.offsetTop - navbarHeight;
+
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            console.log('Section not found:', targetId);
+                        }
+                    }
+                });
+            });
+        });
+        // Category-wise images data
+        const categoryImages = {
+            bridal: [
+                { src: '3231.jpg', title: 'Heavy Bridal' },
+                { src: '1122.jpg', title: 'Front Hands' },
+                { src: '3231', title: 'Back Hands' },
+                { src: '1122.jpg', title: 'Full Arms' },
+                { src: '3231.jpg', title: 'Royal Design' },
+                { src: '3231.jpg', title: 'Heavy Bridal' },
+                { src: '1122.jpg', title: 'Front Hands' },
+                { src: '3231', title: 'Back Hands' },
+                { src: '1122.jpg', title: 'Full Arms' },
+                { src: '3231.jpg', title: 'Royal Design' }
+            ],
+            arabic: [
+                { src: '3231.jpg', title: 'Heavy Bridal' },
+                { src: '1122.jpg', title: 'Front Hands' },
+                { src: '3231', title: 'Back Hands' },
+                { src: '1122.jpg', title: 'Full Arms' },
+                { src: '3231.jpg', title: 'Royal Design' },
+                { src: '3231.jpg', title: 'Heavy Bridal' },
+            ],
+            kids: [
+                { src: '3231.jpg', title: 'Heavy Bridal' },
+                { src: '1122.jpg', title: 'Front Hands' },
+                { src: '3231', title: 'Back Hands' },
+                { src: '1122.jpg', title: 'Full Arms' },
+                { src: '3231.jpg', title: 'Royal Design' },
+                { src: '3231.jpg', title: 'Heavy Bridal' },
+            ],
+            party: [
+                { src: '3231.jpg', title: 'Heavy Bridal' },
+                { src: '1122.jpg', title: 'Front Hands' },
+                { src: '3231', title: 'Back Hands' },
+                { src: '1122.jpg', title: 'Full Arms' },
+                { src: '3231.jpg', title: 'Royal Design' },
+                { src: '3231.jpg', title: 'Heavy Bridal' },
+            ]
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Category click events
+            document.querySelectorAll('.category-card').forEach(function (card) {
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', function () {
+                    const category = this.dataset.category;
+                    showCategory(category);
+                });
+            });
+
+            // Default: Bridal category
+            showCategory('bridal');
+        });
+
+        function showCategory(category) {
+            console.log('Showing category:', category);
+
+            // Update active card
+            document.querySelectorAll('.category-card').forEach(function (card) {
+                card.classList.remove('active');
+            });
+            document.querySelector(`[data-category="${category}"]`).classList.add('active');
+
+            // Update active grid
+            document.querySelectorAll('.images-grid').forEach(function (grid) {
+                grid.classList.remove('active');
+            });
+            document.getElementById(category + '-grid').classList.add('active');
+
+            // Load images for selected category
+            const targetGrid = document.getElementById(category + '-grid');
+            targetGrid.innerHTML = '';
+
+            const images = categoryImages[category] || [];
+            images.forEach(function (image) {
+                const imageDiv = document.createElement('div');
+                imageDiv.className = 'category-image';
+                imageDiv.innerHTML = `
+            <img src="${image.src}" alt="${image.title}" loading="lazy">
+            <div class="category-image-overlay">
+                <h4>${image.title}</h4>
+            </div>
+        `;
+                targetGrid.appendChild(imageDiv);
+            });
+
+            // Auto scroll to top of gallery
+            targetGrid.scrollTop = 0;
+        }
+
+        // Pricing section animations
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animate prices on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.pricing-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+
+        // Booking Form Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('bookingForm');
+            const categorySelect = document.getElementById('category');
+            const typeSelect = document.getElementById('type');
+            const groupFields = document.querySelector('.group-fields');
+            const totalAmount = document.getElementById('totalAmount');
+            const submitBtn = document.getElementById('submitBtn');
+
+            // Pricing logic
+            const prices = {
+                bridal: { full: 5000, half: 3500 },
+                arabic: { full: 2500, half: 1800 },
+                kids: { full: 800, half: 500 },
+                party: { full: 1500, half: 1000 },
+                group: { '1-4': 400, '5-9': 350, '10-12': 300, '13+': 275 }
+            };
+
+            function calculateTotal() {
+                const category = categorySelect.value;
+                const type = typeSelect.value;
+                const groupSize = document.getElementById('groupSize').value;
+
+                let amount = 0;
+
+                if (category === 'group' && groupSize) {
+                    amount = prices.group[groupSize] * 6; // Average 6 people
+                } else if (category && type) {
+                    amount = prices[category][type];
+                }
+
+                totalAmount.textContent = '₹' + amount.toLocaleString();
+                submitBtn.style.opacity = amount > 0 ? '1' : '0.6';
+            }
+
+            // Event listeners
+            categorySelect.addEventListener('change', function () {
+                groupFields.style.display = this.value === 'group' ? 'grid' : 'none';
+                calculateTotal();
+            });
+
+            typeSelect.addEventListener('change', calculateTotal);
+            document.getElementById('groupSize').addEventListener('change', calculateTotal);
+
+            // Form submit
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const formData = {
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('phone').value,
+                    date: document.getElementById('date').value,
+                    time: document.getElementById('time').value,
+                    category: categorySelect.value,
+                    type: typeSelect.value,
+                    payment: document.querySelector('input[name="payment"]:checked').value,
+                    amount: totalAmount.textContent
+                };
+
+                // WhatsApp redirect
+                const message = `New Booking Request%0A%0A👤 Name: ${formData.name}%0A📱 Phone: ${formData.phone}%0A📅 Date: ${formData.date}%0A🕒 Time: ${formData.time}%0A🎨 Service: ${formData.category} (${formData.type})%0A💰 Amount: ${formData.amount}%0A💳 Payment: ${formData.payment.toUpperCase()}`;
+
+                window.open(`https://wa.me/918699358629?text=${message}`, '_blank');
+
+                // Reset form
+                form.reset();
+                groupFields.style.display = 'none';
+                totalAmount.textContent = '₹0';
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
