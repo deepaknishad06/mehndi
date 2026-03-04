@@ -29,7 +29,7 @@
             <ul class="nav-menu" id="mobileMenu">
                 <li><a href="index.html" class="nav-link active">🏠 Home</a></li>
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="artist.html" class="nav-link">Artists</a></li>
                 <li><a href="#booking" class="nav-link">Book Now</a></li>
                 <li><a href="https://wa.me/918699358629" class="nav-link whatsapp" target="_blank">WhatsApp</a></li>
             </ul>
@@ -141,60 +141,102 @@
     <section class="booking" id="booking">
         <div class="container">
             <h2 class="section-title">Book Your Mehndi Appointment</h2>
-            <form id="bookingForm" class="booking-form">
+            <form id="bookingForm" class="booking-form" novalidate>
                 <div class="form-row">
-                    <input type="text" id="name" placeholder="Full Name *" required>
-                    <input type="tel" id="phone" placeholder="Phone Number *" required>
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        <div class="error-message" id="nameError">Please enter your full name</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g. +91 9876543210" required>
+                        <div class="error-message" id="phoneError">Please enter valid phone number</div>
+                    </div>
                 </div>
                 <div class="form-row">
-                    <input type="date" id="date" required>
-                    <input type="time" id="time" required>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        <div class="error-message" id="emailError">Please enter valid email</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address / Location *</label>
+                        <input type="text" id="address" name="address" placeholder="Your full address or venue location"
+                            required>
+                        <div class="error-message" id="addressError">Please enter your address/location</div>
+                    </div>
                 </div>
                 <div class="form-row">
-                    <select id="category" required>
-                        <option value="">Select Category</option>
-                        <option value="bridal">Bridal</option>
-                        <option value="arabic">Arabic</option>
-                        <option value="kids">Kids</option>
-                        <option value="party">Party</option>
-                        <option value="group">Group/Event</option>
-                    </select>
-                    <select id="type" required>
-                        <option value="">Type</option>
-                        <option value="full">Full Hands</option>
-                        <option value="half">Half Hands</option>
-                    </select>
+                    <div class="form-group">
+                        <label for="date">Preferred Date *</label>
+                        <input type="date" id="date" name="date" required>
+                        <div class="error-message" id="dateError">Please select a date</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time *</label>
+                        <input type="time" id="time" name="time" required>
+                        <div class="error-message" id="timeError">Please select a time</div>
+                    </div>
                 </div>
-                <div class="form-row group-fields" style="display:none;">
-                    <select id="groupSize">
-                        <option value="">Group Size</option>
-                        <option value="1-4">1-4 People</option>
-                        <option value="5-9">5-9 People</option>
-                        <option value="10-12">10-12 People</option>
-                        <option value="13+">13+ People (Enquiry)</option>
-                    </select>
-                    <select id="occasion">
-                        <option value="">Occasion</option>
-                        <option value="wedding">Wedding</option>
-                        <option value="party">Party/Event</option>
-                    </select>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="category">Category *</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select Category</option>
+                            <option value="bridal">Bridal Mehndi</option>
+                            <option value="arabic">Arabic Style</option>
+                            <option value="kids">Kids Mehndi</option>
+                            <option value="party">Party Wear</option>
+                            <option value="group">Group/Event</option>
+                        </select>
+                        <div class="error-message" id="categoryError">Please select category</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Type *</label>
+                        <select id="type" name="type" required>
+                            <option value="">Select Type</option>
+                            <option value="full">Full Hands</option>
+                            <option value="half">Half Hands</option>
+                        </select>
+                        <div class="error-message" id="typeError">Please select type</div>
+                    </div>
+                </div>
+                <div class="form-row group-fields" id="groupFields">
+                    <div class="form-group">
+                        <label for="groupSize">Group Size</label>
+                        <select id="groupSize" name="groupSize">
+                            <option value="">Select Group Size</option>
+                            <option value="1-4">1-4 People</option>
+                            <option value="5-9">5-9 People</option>
+                            <option value="10-12">10-12 People</option>
+                            <option value="13+">13+ People (Enquiry)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="occasion">Occasion</label>
+                        <select id="occasion" name="occasion">
+                            <option value="">Select Occasion</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="party">Party/Event</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="total-display">
                     <h3>Total Amount: <span id="totalAmount">₹0</span></h3>
                 </div>
                 <div class="form-row payment-row">
                     <label>
-                        <input type="radio" name="payment" value="online" checked> Online (Razorpay/Google Pay)
+                        <input type="radio" name="payment" value="online" checked> Online Payment (Razorpay/Google Pay)
                     </label>
                     <label>
                         <input type="radio" name="payment" value="cod"> Cash on Delivery
                     </label>
                 </div>
-                <button type="submit" class="submit-btn" id="submitBtn">Confirm & Pay</button>
+                <button type="submit" class="submit-btn" id="submitBtn">Confirm & Pay Now</button>
             </form>
         </div>
     </section>
-
     <!-- Contact Section -->
     <section class="contact">
         <div class="container">
@@ -367,74 +409,136 @@
         });
 
         // Booking Form Logic
+
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('bookingForm');
-            const categorySelect = document.getElementById('category');
-            const typeSelect = document.getElementById('type');
-            const groupFields = document.querySelector('.group-fields');
+            const category = document.getElementById('category');
+            const groupFields = document.getElementById('groupFields');
+            const type = document.getElementById('type');
             const totalAmount = document.getElementById('totalAmount');
             const submitBtn = document.getElementById('submitBtn');
 
-            // Pricing logic
+            // Prices (in INR)
             const prices = {
                 bridal: { full: 5000, half: 3500 },
-                arabic: { full: 2500, half: 1800 },
-                kids: { full: 800, half: 500 },
-                party: { full: 1500, half: 1000 },
-                group: { '1-4': 400, '5-9': 350, '10-12': 300, '13+': 275 }
+                arabic: { full: 4000, half: 2800 },
+                kids: { full: 1500, half: 1000 },
+                party: { full: 2500, half: 1800 },
+                group: { full: 2000, half: 1400 } // per person base
             };
 
+            // Calculate total
             function calculateTotal() {
-                const category = categorySelect.value;
-                const type = typeSelect.value;
-                const groupSize = document.getElementById('groupSize').value;
-
-                let amount = 0;
-
-                if (category === 'group' && groupSize) {
-                    amount = prices.group[groupSize] * 6; // Average 6 people
-                } else if (category && type) {
-                    amount = prices[category][type];
+                const cat = category.value;
+                const typ = type.value;
+                if (cat && typ && prices[cat] && prices[cat][typ]) {
+                    let basePrice = prices[cat][typ];
+                    if (cat === 'group') {
+                        const size = document.getElementById('groupSize').value;
+                        if (size === '1-4') basePrice *= 4;
+                        else if (size === '5-9') basePrice *= 7;
+                        else if (size === '10-12') basePrice *= 11;
+                        else basePrice = 'Enquiry';
+                    }
+                    totalAmount.textContent = typeof basePrice === 'string' ? basePrice : `₹${basePrice.toLocaleString()}`;
+                } else {
+                    totalAmount.textContent = '₹0';
                 }
-
-                totalAmount.textContent = '₹' + amount.toLocaleString();
-                submitBtn.style.opacity = amount > 0 ? '1' : '0.6';
             }
 
-            // Event listeners
-            categorySelect.addEventListener('change', function () {
-                groupFields.style.display = this.value === 'group' ? 'grid' : 'none';
+            // Group fields toggle
+            category.addEventListener('change', function () {
+                if (this.value === 'group') {
+                    groupFields.classList.add('show');
+                } else {
+                    groupFields.classList.remove('show');
+                }
                 calculateTotal();
             });
 
-            typeSelect.addEventListener('change', calculateTotal);
-            document.getElementById('groupSize').addEventListener('change', calculateTotal);
+            type.addEventListener('change', calculateTotal);
+
+            // Real-time validation
+            const inputs = form.querySelectorAll('input[required], select[required]');
+            inputs.forEach(input => {
+                input.addEventListener('blur', validateField);
+                input.addEventListener('input', clearError);
+            });
+
+            function validateField(e) {
+                const field = e.target;
+                const errorEl = field.parentNode.querySelector('.error-message');
+                let isValid = true;
+                let errorMsg = '';
+
+                if (!field.value.trim()) {
+                    isValid = false;
+                    errorMsg = field.parentNode.querySelector('label').textContent.replace('*', '');
+                } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+                    isValid = false;
+                    errorMsg = 'Please enter valid email';
+                } else if (field.type === 'tel' && !/^\+?\d{10,12}$/.test(field.value.replace(/\D/g, ''))) {
+                    isValid = false;
+                    errorMsg = 'Please enter valid phone number';
+                }
+
+                if (!isValid) {
+                    field.classList.add('error');
+                    if (errorEl) errorEl.textContent = errorMsg;
+                    errorEl.style.display = 'block';
+                }
+                toggleSubmit();
+            }
+
+            function clearError(e) {
+                e.target.classList.remove('error');
+                const errorEl = e.target.parentNode.querySelector('.error-message');
+                if (errorEl) errorEl.style.display = 'none';
+            }
+
+            function toggleSubmit() {
+                const hasErrors = form.querySelector('.error');
+                const allFilled = Array.from(inputs).every(input => input.value.trim());
+                submitBtn.disabled = !!hasErrors || !allFilled || totalAmount.textContent === '₹0';
+            }
 
             // Form submit
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
 
-                const formData = {
-                    name: document.getElementById('name').value,
-                    phone: document.getElementById('phone').value,
-                    date: document.getElementById('date').value,
-                    time: document.getElementById('time').value,
-                    category: categorySelect.value,
-                    type: typeSelect.value,
-                    payment: document.querySelector('input[name="payment"]:checked').value,
-                    amount: totalAmount.textContent
-                };
+                // Final validation
+                let valid = true;
+                inputs.forEach(input => {
+                    if (!input.value.trim()) valid = false;
+                });
 
-                // WhatsApp redirect
-                const message = `New Booking Request%0A%0A👤 Name: ${formData.name}%0A📱 Phone: ${formData.phone}%0A📅 Date: ${formData.date}%0A🕒 Time: ${formData.time}%0A🎨 Service: ${formData.category} (${formData.type})%0A💰 Amount: ${formData.amount}%0A💳 Payment: ${formData.payment.toUpperCase()}`;
+                if (!valid || totalAmount.textContent === '₹0') {
+                    alert('Please fill all required fields and select valid options.');
+                    return;
+                }
 
-                window.open(`https://wa.me/918699358629?text=${message}`, '_blank');
+                // Collect data
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
+                data.total = totalAmount.textContent;
 
-                // Reset form
+                // WhatsApp integration (Deepak's preference)
+                const message = `🧧 New Mehndi Booking!\n\n👤 Name: ${data.name}\n📧 Email: ${data.email}\n📱 Phone: ${data.phone}\n📍 Address: ${data.address}\n📅 Date: ${data.date}\n🕒 Time: ${data.time}\n🎨 Category: ${data.category}\n✋ Type: ${data.type}\n💰 Total: ${data.total}\n💳 Payment: ${data.payment}${data.groupSize ? `\n👥 Group: ${data.groupSize}` : ''}${data.occasion ? `\n🎉 Occasion: ${data.occasion}` : ''}`;
+
+                const whatsappUrl = `https://wa.me/918699358629?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+
+                // Success feedback
+                alert('Booking confirmed! Redirecting to WhatsApp...');
                 form.reset();
-                groupFields.style.display = 'none';
+                groupFields.classList.remove('show');
                 totalAmount.textContent = '₹0';
+                submitBtn.disabled = true;
             });
+
+            // Initial calculation
+            calculateTotal();
+            toggleSubmit();
         });
     </script>
 
